@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+display:flex;
+align-items: center;
+justify-content:center;
+min-height: 100vh;
+background:rgb(12, 86, 123);
+
+
+}
+.wrapper{
+position: relative;
+height:400px;
+width: 700px;
+}
+
+.wrapper .img{
+position: absolute;
+height:100%;
+width:100%;
+
+}
+
+
+.wrapper .img img{
+height:100%;
+width:100%;
+object-fit: cover;
+clip-path: circle(0% at 0% 100%);
+transition:all 0.7s;
+}
+#one:checked ~ .img-1 img{
+ clip-path: circle(150% at 0% 100%);
+}
+#two:checked ~ .img-1 img,
+#two:checked ~ .img-2 img{
+ clip-path: circle(150% at 0% 100%);
+}
+
+#three:checked ~ .img-1 img,
+#three:checked ~ .img-2 img,
+#three:checked ~ .img-3 img{
+ clip-path: circle(150% at 0% 100%);
+}
+
+#four:checked ~ .img-1 img,
+#four:checked ~ .img-2 img,
+#four:checked ~ .img-3 img,
+#four:checked ~ .img-4 img{
+ clip-path: circle(150% at 0% 100%);
+}
+ 
+#five:checked ~ .img-1 img,
+#five:checked ~ .img-2 img,
+#five:checked ~ .img-3 img,
+#five:checked ~ .img-4 img,
+#five:checked ~ .img-5 img{
+clip-path: circle(150% at 0% 100%);
+}
+
+.wrapper .sliders{
+position: absolute;
+bottom:20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 999;
+display: flex;
+}
+
+.wrapper .sliders label{
+  height:13px;
+  width: 13px;
+  border: 2px solid rgb(6, 56, 81);
+  margin:0 3px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#one:checked ~ .sliders label.one,
+#two:checked ~ .sliders label.two,
+#three:checked ~ .sliders label.three,
+#four:checked ~ .sliders label.four,
+#five:checked ~ .sliders label.five{
+    width: 35px;
+    border-radius: 14px;
+    background:rgb(92, 186, 233);
+}
+
+.sliders label:hover{
+    background:rgb(92, 186, 233);
+}
+
+.wrapper input[type="radio"]{
+display: none;
+}
+
+
+.section-title h1 {
+        font-size: 55px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom:10px;
+        color: #fff;
+
+    }
+
+    .section-title h2{
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 15px;
+        color: rgb(92, 186, 233);
+    }  
+
+
+    .section-title .line {
+        width: 150px;
+        height: 4px;
+        border: 5px;
+        background: rgb(92, 186, 233);
+        margin: auto;
+        margin-bottom: 25px;
+    }
+
+   
+footer{
+    background-color:rgb(6, 56, 81);
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+  margin-bottom:0px;
+    margin-top:0;
+    
+}
+.footerNav{
+    margin: 50px 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footerNav ul li a{
+    color:#fff;
+    margin: 20px;
+    text-decoration:none;
+    font-size:1.3em;
+    opacity:0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    opacity:1;
+    color: rgb(92, 186, 233);
+}
+
+.footerBottom {
+    background-color: rgb(12, 86, 123);
+    padding: 10px;
+    text-align: center;
+
+}
+.footerBottom p{
+   color: #fff; 
+   text-decoration: none;
+}
+.designer{
+    opacity:0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+.CSCLogo{
+display:flex;
+justify-content: center;
+}
+.CSCLogo img{
+    height:60px; /* Adjust this to your logo's size */
+    width: auto; /* keeps the aspect ratio */
+} 
+</style>
+<nav>
+    <section id="main">
+    <section id="services">
+<div class="container">
+    <div class="section-title">
+        <h1>ACTIVITIES
+        <H2>COLLEGE STUDENT COUNCIL</H2>
+        <div class="line"></div>
+    </div>
+<div class="wrapper">
+   <input type="radio" name="slide" id="one" checked>
+   <input type="radio"  name="slide" id="two">
+   <input type="radio" name="slide" id="three">
+   <input type="radio"  name="slide" id="four">
+   <input type="radio"  name="slide" id="five">
+    <div class="img img-1">
+    <img src="SERVICES/cheerdance.jpg" alt="" >
+    </div>
+    <div class="img img-2">
+    <img src="SERVICES/parade.jpg" alt="" >
+    </div>
+    <div class="img img-3">
+    <img src="SERVICES/parade1.jpg" alt="" >
+    </div>
+    <div class="img img-4">
+    <img src="SERVICES/csc parade.jpg" alt="" >
+    </div>
+    <div class="img img-5">
+    <img src="SERVICES/sportsfest.jpg" alt="" >
+    </div>
+
+    <div class="sliders">
+        <label for="one" class="one"></label>
+        <label for="two"class="two"></label>
+        <label for="three"class="three"></label>
+        <label for="four"class="four"></label>
+        <label for="five"class="five"></label>
+    </div>
+    
+</div>
+<nav>
+    <section id="services">
+<div class="container5">
+<footer>
+        <div class="footerNav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Feedbacks.html">Feedback</a></li>
+                <li><a href="Register.html">Register</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="footerBottom">
+            <p>copyright &copy;2025; Developed by <span class="designer">Researcher-CHS 3A</span></p>
+    </div>
+</footer>
+</html>
+</DOCTYPE html>

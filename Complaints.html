@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>AMC STUDENT COUNCIL(CSC)</title>
+    </head>
+        <style>
+      *
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins" , sans-serif;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background:  rgb(12, 86, 123);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 80%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 40px 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    box-shadow: 0 5px 10px red;
+    margin-left: 130px;
+
+}
+
+.container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .content .left-side{
+   width: 25%;
+   height: 100%; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: 15px;
+   position: relative;
+}
+.content .left-side::before{
+content:'';
+position:absolute;
+height: 70%;
+width: 2px;
+right: -15px;
+top: 50%;
+transform: translateY(-50%);
+background: red;
+
+}
+.content .left-side .details{
+    margin: 14px;
+    text-align: center;
+}
+
+.content .left-side .details i{
+font-size: 30px;
+color:red;
+margin-bottom: 10px;
+}
+
+
+.content .left-side .details .topic{
+font-size: 18px;
+font-weight: 500;
+}
+
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+ font-size: 16px;
+color:  black;
+
+}
+.container .content .right-side{
+   width: 75%;
+   margin-left: 75px;
+}
+.content .right-side .topic-text{
+   font-size: 25px;
+font-weight: 600;
+color:red;
+}
+
+.right-side  .input-box{
+ height:50px;
+ width: 100%; 
+ margin: 12px 0;
+}
+
+.right-side  .input-box input,
+.right-side  .input-box textarea{
+   height: 100%;
+   width: 100%; 
+   border: none;
+   font-size: 16px;
+   background:#f0f1f8;
+   border-radius: 6px;
+   padding: 0 15px;
+   resize: none;
+}
+
+.right-side  .message-box{
+   min-height:110px;  
+}
+
+.right-side .button{
+    display: inline-block;
+    margin-top:12px;
+}
+.right-side .button input[type="button"]{
+    color:#fff;
+    font-size: 18px;
+    outline:none;
+    border:none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background:red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input[type="button"]:hover{
+ background:rgb(12, 86, 123);
+}
+
+.topic{
+  color:red;
+}
+
+.topic-text p{
+   color: black;
+}
+
+
+section {
+ margin: 1px auto;
+ }
+footer{
+    background-color:rgb(6, 56, 81);
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+  margin-bottom:0px;
+    margin-top:0;
+    height: 10%;
+}
+.footerNav{
+    margin: 30px 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footerNav ul li a{
+    color:#fff;
+    margin: 20px;
+    text-decoration:none;
+    font-size:1.3em;
+    opacity:0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    opacity:1;
+    color: rgb(92, 186, 233);
+}
+
+.footerBottom {
+    background-color: rgb(12, 86, 123);
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+   color: #fff; 
+   text-decoration: none;
+}
+.designer{
+    opacity:0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+.CSCLogo{
+display:flex;
+justify-content: center;
+}
+.CSCLogo img{
+    height:60px; /* Adjust this to your logo's size */
+    width: auto; /* keeps the aspect ratio */
+}
+
+.section-title h1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+
+    .section-title .line {
+        width: 150px;
+        height: 4px;
+        border: 5px;
+        background:red;
+        margin: auto;
+        margin-bottom: 25px;
+    }
+    
+</style>
+</head>
+
+       <body>
+            <section id="main">
+                <div class="section-title">
+                    <h1>COMPLAINTS</h1>
+                    <div class="line"></div>
+                <div class="container">
+                <div class="content">
+                    <div class="left-side">
+                        <div class="address details">
+                        <i class="fa fa-map-marker"></i>
+                        <div class="topic">ADDRESS</div>
+                        <div class="text-one">Lubigan hills, Ambolong, Aroroy, Masbate</div>
+                        <div class="text-two"></div>
+                    </div>
+                    <div class="address details">
+                        <i class="fa fa-envelope"></i>
+                        <div class="topic">EMAIL ADDRESS</div>
+                        <div class="text-one">amcstudentcouncil@gmail.com</div>
+                        <div class="text-two"></div>
+                    </div>
+                    <div class="address details">
+                        <i class="fa fa-facebook-f"></i>
+                        <div class="topic">FACEBOOK</div>
+                        <div class="text-one">AMC Student Council</div>
+                        <div class="text-two"></div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Send us a message</div>
+                    <p>If you have any concern from us or any types of quries related to the Student Council, you can send us message from here. It's our pleasure to help you.</p>
+                <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your email">
+                </div>
+                <div class="input-box message-box">
+                    <textarea></textarea>
+                </div>
+                <div class="button">
+                    <input type="button" value="Send Now">
+                </div>
+                </form>
+                </div>
+            </div>
+            </div>  
+            </body>
+    
+
+        </body>
+        <footer>
+            <div class="footerContainer">
+                <div class="CSCLogo">
+                    <img src="LOGO/CSC LOGO.png" alt="">
+                </div>
+                <div class="footerNav">
+                    <ul>
+                        <ul>
+                            <li><a href="Home.html">Home</a></li>
+                            <li><a href="About.html">About Us</a></li>
+                            <li><a href="Services.html">Services</a></li>
+                            <li><a href="Feedbacks.html">Feedback</a></li>
+                            <li><a href="Register.html">Register</a></li>
+                        </ul>
+                </div>
+                </div>
+        
+                <div class="footerBottom">
+                    <p>copyright &copy;2025; Developed by <span class="designer">Researcher-CHS 3A</span></p>
+        
+        
+            </div>
+        </footer>
+
+    </html>
+    </DOCTYPE>
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    

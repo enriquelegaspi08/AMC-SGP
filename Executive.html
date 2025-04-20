@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AMC STUDENT COUNCIL(CSC)</title>
+    </head>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body{
+        min-height: 100vh;
+        width: 100%;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        background: #f2f2f2;
+        position: relative;
+      }
+      
+      body::before{
+        content:'';
+        position: absolute;
+        height: 100%;
+        width:100%;
+        background:rgb(12, 86, 123);
+        clip-path: inset(47% 0 0 0);
+        z-index: -1;
+        margin-top: 30px;
+      }
+
+      .container{
+        max-width: 950px;
+        width: 100%;
+        overflow: hidden;
+        padding: 80px 0;
+
+      }
+
+      .container .main-card{
+        width: 200%;
+        display: flex;
+        justify-content:space-evenly;
+        transition: all 1s ease;
+      }
+
+      #two:checked ~ .main-card{
+         margin-left: -100%;
+      } 
+      .main-card .cards{
+        width: calc(100% / 2 - 10px);
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px;
+      }
+      
+      .main-card .cards .card{
+        background:rgb(6, 56, 81);
+        width: calc(100% / 3 - 10px);
+        padding: 30px;
+        border-radius: 24px;
+        transition: all 0.4s ease;
+      }
+     .main-card .cards .card:hover{
+        transform: translateY(-15px);
+        }
+      .cards .card .content{
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        text-align: center;
+      }
+      .cards .card .content .img{
+        height: 130px;
+        width: 130px;
+        margin-bottom: 14px;
+        background:rgb(6, 56, 81);
+        padding: 3px;
+        border-radius: 50%;
+
+      }
+
+      .card .content .img img{
+        height:100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+      }
+
+      .card .content .details .name{
+        font-size: 18px;
+        font-weight: 500;
+        color:#fff;
+      }
+      .card .content .details .job{
+        font-size: 16px;
+        text-align:center;
+        color:rgb(92, 186, 233);
+      }
+
+      .button{
+        display: flex;
+        margin :20px;
+        justify-content: center;  
+        }
+
+      .button label{
+        height: 15px;
+        width: 15px;
+        background:rgb(92, 186, 233);
+        margin: 0 4px;
+        border-radius: 20%;
+        transition: all 0.5s ease;
+        }
+      .button label.active{
+        width: 35px;
+        }
+      #one:checked ~ .button label.one{
+         width: 35px;
+        }
+
+      #two:checked ~ .button label.two{
+         width: 35px;
+        }
+      #two:checked ~ .button label.one{
+         width: 15px;
+        }
+      #one:checked ~ .button label.two{
+         width: 15px;   
+        }
+      input[type="radio"]{
+display: none;
+        }
+
+    .section-title h1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 15px;
+        color: rgb(6, 56, 81);
+    }
+
+    .section-title h2{
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 15px;
+        color: rgb(12, 86, 123);
+    }  
+
+
+    .section-title .line {
+        width: 150px;
+        height: 4px;
+        border: 5px;
+        background:rgb(6, 56, 81);
+        margin: auto;
+        margin-bottom: 25px;
+    }
+    
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+    height:fit-content;
+    margin-top:0;
+}
+.footerNav{
+    margin: 10px 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footerNav ul li a{
+    color:#fff;
+    margin: 30px;
+    text-decoration:none;
+    font-size:1.3em;
+    opacity:0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    color:rgb(92, 186, 233);
+}
+
+.footerBottom {
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+   color:#fff;
+   text-decoration: none;
+}
+.designer{
+    opacity:0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+
+</style>
+</head>
+    <body>
+           <nav>
+            <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h1>ORGANIZATIONAL CHART</h1>
+                <H2>COLLEGE STUDENT COUNCIL</H2>
+                <div class="line"></div>
+            </div>
+            <input type="radio" name="dot" id="one">
+            <input type="radio" name="dot" id="two">
+            <div class="main-card">
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/verano.jpeg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">LAILA B. VERANO</div>
+                            <div class="job">PRESIDENT</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/abunda.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">SHAKAIRA MONIQUE ABUNDA</div>
+                            <div class="job">VICE PRESIDENT</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/villanueva.jpeg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">LAURENCE VILLANUEVA</div>
+                            <div class="job">EXECUTIVE SECRETARY</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/thea_.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">DOROTHEA GERASTA</div>
+                            <div class="job">LEGISLATIVE SECRETARY</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/Bulalacao.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">LOUISSE GENESISS R. BULALACAO</div>
+                            <div class="job">TREASURER</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="img">
+                                <img src="CSC OFFICERS/cristine L..jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div class="name">CHRISTINE G. LOPEZ</div>
+                            <div class="job">AUDITOR</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                </div> 
+                <div class="button">
+                    <label for="one" class="one active"></label>
+                    <label for="two" class="two"></label>
+                  </div>
+             
+                 </div>
+        </div>
+        </section>
+        <body>
+            <nav>
+             <section id="services">
+         <div class="container">
+             <div class="main-card">
+                 <div class="cards">
+                     <div class="card">
+                         <div class="content">
+                             <div class="img">
+                                 <img src="CSC OFFICERS/christine M..jpg" alt="">
+                             </div>
+                             <div class="details">
+                                 <div class="name">CHRISTINE T. MAHINAY</div>
+                             <div class="job">P.I.O</div>
+                             </div>
+ 
+                         </div>
+                     </div>
+                     <div class="card">
+                         <div class="content">
+                             <div class="img">
+                                 <img src="CSC OFFICERS/joana paula.jpg" alt="">
+                             </div>
+                             <div class="details">
+                                 <div class="name">JOANA PAULA BELLO</div>
+                             <div class="job">BUSINESS MANAGER</div>
+                             </div>
+ 
+                         </div>
+                     </div>
+                     <div class="card">
+                         <div class="content">
+                             <div class="img">
+                                 <img src="#" alt="">
+                             </div>
+                             <div class="details">
+                                 <div class="name">JOHN DAVID T. SESE</div>
+                             <div class="job">BUSINESS MANAGER</div>
+                             </div>
+ 
+                         </div>
+                     </div>
+                     
+                 </div>
+ 
+                 <div class="cards"></div>
+                 </div> 
+              
+                  </div>
+         </div>
+         </section>
+                <nav>
+                    <section id="services">
+                <div class="container5">
+                <footer>
+                        <div class="footerNav">
+                            <ul>
+                                <li><a href="Home.html">Home</a></li>
+                                <li><a href="About.html">About Us</a></li>
+                                <li><a href="Services.html">Services</a></li>
+                                <li><a href="Feedbacks.html">Feedback</a></li>
+                                <li><a href="Register.html">Register</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                
+                        <div class="footerBottom">
+                            <p>copyright &copy;2025; Developed by <span class="designer">Researcher-CHS 3A</span></p>
+                    </div>
+                </footer>
+    </html>
+</DOCTYPE html>

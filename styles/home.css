@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+  
+  header {
+    color: #050505;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+   
+  .container, .container1, .container3 {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+  }
+
+    .dropdown-item:hover {
+        color: #ff8a01 !important;
+    }
+
+    #greeting {
+        background-image: url(../COVER/COVER1.png);
+        background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color: #fff; /* Adjust text color for visibility on dark background */
+        height: 70vh;
+        display: flex;
+      align-items: center;  /* Vertically center content */
+      justify-content: center;  /* Horizontally center content */
+}
+
+#greeting .container {
+    text-align: center;  /* Ensure the content is centered */
+}
+
+#greeting .content {
+    text-align: center;
+}
+
+.about-card img {
+  border-radius: 20px;
+}
+
+.about-card img:hover {
+  transform: scale(1.05);
+}
+
+  .menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu-bar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list li {
+    position: relative;
+  }
+  
+  .nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+  }
+  
+  .nav-list li:hover > a {
+    background-color: #003d66;
+  }
+  
+  .active > a {
+    background-color: #003366;
+  }
+  
+  /* Dropdown */
+  .sub-menu-1,
+  .sub-menu-2 {
+    display: none;
+    position: absolute;
+    background-color: #0073e6;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    min-width: 200px;
+  }
+  
+  .nav-list li:hover .sub-menu-1 {
+    display: block;
+  }
+  
+  .sub-menu-1 ul,
+  .sub-menu-2 ul {
+    list-style: none;
+  }
+  
+  .sub-menu-1 ul li a,
+  .sub-menu-2 ul li a {
+    padding: 10px;
+    display: block;
+  }
+  
+  .hover-me:hover .sub-menu-2 {
+    display: block;
+    left: 100%;
+    top: 0;
+  }
+  
+  /* Hero Section */
+  .img1 {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .img1 img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Services Section */
+  #services .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .service {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .service h3 {
+    margin-top: 15px;
+    color: #004080;
+  }
+  
+  /* Slider Section */
+  .wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .wrapper input {
+    display: none;
+  }
+  
+  .wrapper .img {
+    display: none;
+    width: 100%;
+  }
+  
+  .wrapper .img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  input#one:checked ~ .img-1,
+  input#two:checked ~ .img-2,
+  input#three:checked ~ .img-3,
+  input#four:checked ~ .img-4,
+  input#five:checked ~ .img-5 {
+    display: block;
+  }
+  
+  .sliders {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .sliders label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input#one:checked ~ .sliders .one,
+  input#two:checked ~ .sliders .two,
+  input#three:checked ~ .sliders .three,
+  input#four:checked ~ .sliders .four,
+  input#five:checked ~ .sliders .five {
+    background-color: #004080;
+  }
+
+  #activityCarousel .carousel-inner {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  #activityCarousel .carousel-item img {
+      width: 100%;
+      height: auto; /* Optional: adjust the height to maintain aspect ratio */
+      object-fit: cover; /* Optional: ensures the image covers the container without stretching */
+  }
