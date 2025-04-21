@@ -7,7 +7,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="organization.php">Organization</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
@@ -36,6 +36,10 @@
     nav {
         background-color: #152459 !important;
         padding: 10px 0;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("logo/toggler-white.png");
     }
     
     .navbar .nav-link,

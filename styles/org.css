@@ -59,6 +59,7 @@ body {
     transition: all 0.3s ease-in-out;
     text-align: center;
     color: white;
+    width: 350px;
 }
 
 /* Card Image */
@@ -81,9 +82,19 @@ body {
 }
 
 /* Card Details */
+.card .details {
+    width: 480px;
+}
+
+
 .card .details .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 18px;
     font-weight: bold;
+    width: 100%;
+    text-align: center;
 }
 
 .card .details .job {
