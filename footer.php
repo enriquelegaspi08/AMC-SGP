@@ -1,4 +1,4 @@
-<footer class="py-2">
+<footer class="py-2 mb-0">
         <div class="footer-container d-flex justify-content-center flex-row align-items-center">
             <img src="LOGO/CSC LOGO.png" class="m-1" alt="" width="60">
             <div class="text-center">

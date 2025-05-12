@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,77 +174,145 @@
             <div class="line"></div>
         </div>
 
-        <!-- Radio buttons for sliding -->
-        <input type="radio" name="slider" id="one" checked>
-        <input type="radio" name="slider" id="two">
+        <ul class="nav nav-tabs justify-content-center mb-4" id="officerTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="executive-tab" data-bs-toggle="tab" data-bs-target="#executive" type="button" role="tab">Executive</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="senate-tab" data-bs-toggle="tab" data-bs-target="#senate" type="button" role="tab">Senate</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="representatives-tab" data-bs-toggle="tab" data-bs-target="#representatives" type="button" role="tab">Representatives</button>
+            </li>
+        </ul>
 
-        <!-- Card Slide Container -->
-        <div class="officers">
-            <!-- Set 1 -->
-            <div class="main-card row justify-content-center officer-set set-1">
-                <?php
-                $set1 = [
-                    ["verano.jpeg", "LAILA B. VERANO", "PRESIDENT"],
-                    ["abunda.jpg", "SHAKAIRA MONIQUE ABUNDA", "VICE PRESIDENT"],
-                    ["villanueva.jpeg", "LAURENCE VILLANUEVA", "EXECUTIVE SECRETARY"]
-                ];
-                foreach ($set1 as $officer) {
-                    echo '<div class="card col-12 col-lg-3 mb-3">
-                                <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
-                                <div class="details">
-                                    <h3 class="name">' . $officer[1] . '</h3>
-                                    <h3 class="job">' . $officer[2] . '</h3>
-                                </div>
-                        </div>';
-                }
-                ?>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="executive" role="tabpanel">
+
+                <!-- Radio buttons for sliding -->
+                <input type="radio" name="slider" id="one" checked>
+                <input type="radio" name="slider" id="two">
+
+                <!-- Card Slide Container -->
+                <div class="officers">
+                    <!-- Set 1 -->
+                    <div class="main-card row justify-content-center officer-set set-1">
+                        <?php
+                        $set1 = [
+                            ["verano.jpeg", "LAILA B. VERANO", "PRESIDENT"],
+                            ["abunda.jpg", "SHAKAIRA MONIQUE ABUNDA", "VICE PRESIDENT"],
+                            ["villanueva.jpeg", "LAURENCE VILLANUEVA", "EXECUTIVE SECRETARY"]
+                        ];
+                        foreach ($set1 as $officer) {
+                            echo '<div class="card col-12 col-lg-3 mb-3">
+                                        <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                        <div class="details">
+                                            <h3 class="name">' . $officer[1] . '</h3>
+                                            <h3 class="job">' . $officer[2] . '</h3>
+                                        </div>
+                                </div>';
+                        }
+                        ?>
+                    </div>
+
+                    <!-- Set 2 -->
+                    <div class="main-card row justify-content-center officer-set set-2">
+                        <?php
+                        $set2 = [
+                            ["thea_.jpg", "DOROTHEA GERASTA", "LEGISLATIVE SECRETARY"],
+                            ["Bulalacao.jpg", "LOUISSE GENESISS R. BULALACAO", "TREASURER"],
+                            ["cristine L..jpg", "CHRISTINE G. LOPEZ", "AUDITOR"]
+                        ];
+                        foreach ($set2 as $officer) {
+                            echo '<div class="card col-12 col-lg-3 mb-3">
+                                        <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                        <div class="details">
+                                            <h3 class="name">' . $officer[1] . '</h3>
+                                            <h3 class="job">' . $officer[2] . '</h3>
+                                        </div>
+                                </div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <!-- Navigation dots -->
+                <div class="button text-center mt-4">
+                    <label for="one" class="one"></label>
+                    <label for="two" class="two"></label>
+                </div>
+
+                <!-- Additional Officers -->
+                <div class="main-card row justify-content-center mt-4">
+                    <?php
+                    $extra = [
+                        ["christine M..jpg", "CHRISTINE T. MAHINAY", "P.I.O"],
+                        ["joana paula.jpg", "JOANA PAULA BELLO", "BUSINESS MANAGER"],
+                        ["#", "JOHN DAVID T. SESE", "BUSINESS MANAGER"]
+                    ];
+                    foreach ($extra as $officer) {
+                        echo '<div class="card col-12 col-lg-3 mb-4">
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
+                            </div>';
+                    }
+                    ?>
+                </div>
             </div>
 
-            <!-- Set 2 -->
-            <div class="main-card row justify-content-center officer-set set-2">
-                <?php
-                $set2 = [
-                    ["thea_.jpg", "DOROTHEA GERASTA", "LEGISLATIVE SECRETARY"],
-                    ["Bulalacao.jpg", "LOUISSE GENESISS R. BULALACAO", "TREASURER"],
-                    ["cristine L..jpg", "CHRISTINE G. LOPEZ", "AUDITOR"]
-                ];
-                foreach ($set2 as $officer) {
-                    echo '<div class="card col-12 col-lg-3 mb-3">
-                                <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
-                                <div class="details">
-                                    <h3 class="name">' . $officer[1] . '</h3>
-                                    <h3 class="job">' . $officer[2] . '</h3>
-                                </div>
-                        </div>';
-                }
-                ?>
+            <!-- SENATE -->
+            <div class="tab-pane fade" id="senate" role="tabpanel">
+                <div class="main-card row justify-content-center mt-4">
+                    <?php
+                    $extra = [
+                        ["BAJAR.jpeg", "JESSICA BAJAR", "SENATOR"],
+                        ["khim.jpg", "KIMBERLY ROD M. NATURAL", "SENATOR"],
+                        ["narciso.jpg", "NARCISO B. ANDRIN JR.", "SENATOR"],
+                        ["te angie.jpg", "ANGIELYN P. UBAS", "SENATOR"],
+                        ["lozano.jpg", "ROLLY S. LOZANO JR.", "SENATOR"]
+                    ];
+                    foreach ($extra as $officer) {
+                        echo '<div class="card col-12 col-lg-3 mb-4">
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
+                            </div>';
+                    }
+                    ?>
+                </div>
             </div>
-        </div>
 
-        <!-- Navigation dots -->
-        <div class="button text-center mt-4">
-            <label for="one" class="one"></label>
-            <label for="two" class="two"></label>
-        </div>
-
-        <!-- Additional Officers -->
-        <div class="main-card row justify-content-center mt-4">
-            <?php
-            $extra = [
-                ["christine M..jpg", "CHRISTINE T. MAHINAY", "P.I.O"],
-                ["joana paula.jpg", "JOANA PAULA BELLO", "BUSINESS MANAGER"],
-                ["#", "JOHN DAVID T. SESE", "BUSINESS MANAGER"]
-            ];
-            foreach ($extra as $officer) {
-                echo '<div class="card col-12 col-lg-3 mb-4">
-                            <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
-                            <div class="details">
-                                <h3 class="name">' . $officer[1] . '</h3>
-                                <h3 class="job">' . $officer[2] . '</h3>
-                            </div>
-                    </div>';
-            }
-            ?>
+            <!-- REPRESENTATIVES -->
+            <div class="tab-pane fade" id="representatives" role="tabpanel">
+                <div class="main-card row justify-content-center mt-4">
+                    <?php
+                    $extra = [
+                        ["", "KATE CYRELLE DIOQUINO", "1ST YEAR-BTVTED REPRESENTATIVE"],
+                        ["DANAO.jpg", "JOHN PAUL DANAO", "1ST YEAR-ENTREP REPRESENTATIVE"],
+                        ["joice.jpg", "JOICE B. ARBOLADO", "2ND YEAR-BTVTED REPRESENTATIVE"],
+                        ["kyla.jpg", "KYLA MAE Z. SALIVIO", "2ND YEAR-ENTREP REPRESENTATIVE"],
+                        ["BTVTED-REPRESENTATIVE.jpg", "MARIAL A. CENDAÑA", "3RD YEAR-BTVTED REPRESENTATIVE"],
+                        ["entrep 3.jpg", "ROSEMARIE MAGLENTE", "3RD YEAR-ENTREP REPRESENTATIVE"],
+                        ["raquel.jpg", "RAQUEL DELA PEÑA", "4TH YEAR-BTVTED REPRESENTATIVE"],
+                        ["mariemar.jpg", "MARIEMAR CANTORIA", "4TH YEAR-ENTREP REPRESENTATIVE"]
+                    ];
+                    foreach ($extra as $officer) {
+                        echo '<div class="card col-12 col-lg-3 mb-4">
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
+                            </div>';
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 

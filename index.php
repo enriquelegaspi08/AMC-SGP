@@ -1,5 +1,10 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +16,18 @@
 <body>
 
     <!-- Navbar -->
-    <?php include 'navbar.php';?>
+    <?php include 'navbar.php'; ?>
+
+    <!-- Success Message Alert -->
+    <?php if (isset($_SESSION['success_message'])): ?>
+        <div class="container mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars($_SESSION['success_message']); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        <?php unset($_SESSION['success_message']); ?>
+    <?php endif; ?>
 
     <!-- Header -->
     <header class="text-center py-3">
@@ -82,9 +98,82 @@
         </div>
     </section>
 
+    <!-- Chatbot Toggle Button -->
+    <button class="btn btn-primary position-fixed bottom-0 end-0 m-4" id="chatToggle" style="z-index: 9999; font-size: 24px; color: blue;">
+        💬
+    </button>
+
+    <!-- Chatbot Box -->
+    <div id="chatbotBox" class="card shadow position-fixed" style="width: 300px; bottom: 80px; right: 20px; z-index: 9998; display: none;">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <span>CSC Bot</span>
+            <button type="button" class="btn-close btn-close-white btn-sm" id="closeChat"></button>
+        </div>
+        <div class="card-body" style="max-height: 300px; overflow-y: auto;" id="chatMessages">
+            <div class="text-muted text-center mb-2">How can I help you today?</div>
+        </div>
+        <div class="card-footer p-2">
+            <form id="chatForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="chatInput" placeholder="Type a message..." autocomplete="off">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Auto close alert after 5 seconds
+        setTimeout(function() {
+            var alertElement = document.querySelector('.alert');
+            if (alertElement) {
+                var alert = bootstrap.Alert.getOrCreateInstance(alertElement);
+                alert.close();
+            }
+        }, 2000);
+    </script>
+
+    <script>
+        document.getElementById('chatToggle').addEventListener('click', function() {
+            const chatBox = document.getElementById('chatbotBox');
+            chatBox.style.display = (chatBox.style.display === 'none' || chatBox.style.display === '') ? 'block' : 'none';
+        });
+
+        document.getElementById('closeChat').addEventListener('click', function() {
+            document.getElementById('chatbotBox').style.display = 'none';
+        });
+
+        document.getElementById('chatForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message === '') return;
+
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML += `<div class="mb-2"><strong>You:</strong> ${message}</div>`;
+
+            fetch('chatbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'message=' + encodeURIComponent(message)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    chatMessages.innerHTML += `<div class="mb-2"><strong>AMC Bot:</strong> ${data.reply}</div>`;
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+
+            input.value = '';
+        });
+    </script>
+
 </body>
+
 </html>
