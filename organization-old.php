@@ -209,18 +209,20 @@ include 'config.php';
                 <!-- Card Slide Container -->
                 <div class="officers">
                     <!-- Set 1 -->
-                     <div class="main-card row justify-content-center officer-set set-1">
+                    <div class="main-card row justify-content-center officer-set set-1">
                         <?php
-                        $sql = "SELECT * FROM officers WHERE category='executive-set-1' ORDER BY display_order ASC";
-                        $result = $conn->query($sql);
-
-                        while ($row = $result->fetch_assoc()) {
+                        $set1 = [
+                            ["verano.jpeg", "LAILA B. VERANO", "PRESIDENT"],
+                            ["abunda.jpg", "SHAKAIRA MONIQUE ABUNDA", "VICE PRESIDENT"],
+                            ["villanueva.jpeg", "LAURENCE VILLANUEVA", "EXECUTIVE SECRETARY"]
+                        ];
+                        foreach ($set1 as $officer) {
                             echo '<div class="card col-12 col-lg-3 mb-3">
-                                    <img src="uploads/OFFICERS/' . $row['photo'] . '" alt="' . $row['name'] . '">
-                                    <div class="details">
-                                        <h3 class="name">' . $row['name'] . '</h3>
-                                        <h3 class="job">' . $row['position'] . '</h3>
-                                    </div>
+                                        <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                        <div class="details">
+                                            <h3 class="name">' . $officer[1] . '</h3>
+                                            <h3 class="job">' . $officer[2] . '</h3>
+                                        </div>
                                 </div>';
                         }
                         ?>
@@ -229,16 +231,18 @@ include 'config.php';
                     <!-- Set 2 -->
                     <div class="main-card row justify-content-center officer-set set-2">
                         <?php
-                        $sql = "SELECT * FROM officers WHERE category='executive-set-2' ORDER BY display_order ASC";
-                        $result = $conn->query($sql);
-
-                        while ($row = $result->fetch_assoc()) {
+                        $set2 = [
+                            ["thea_.jpg", "DOROTHEA GERASTA", "LEGISLATIVE SECRETARY"],
+                            ["Bulalacao.jpg", "LOUISSE GENESISS R. BULALACAO", "TREASURER"],
+                            ["cristine L..jpg", "CHRISTINE G. LOPEZ", "AUDITOR"]
+                        ];
+                        foreach ($set2 as $officer) {
                             echo '<div class="card col-12 col-lg-3 mb-3">
-                                    <img src="uploads/OFFICERS/' . $row['photo'] . '" alt="' . $row['name'] . '">
-                                    <div class="details">
-                                        <h3 class="name">' . $row['name'] . '</h3>
-                                        <h3 class="job">' . $row['position'] . '</h3>
-                                    </div>
+                                        <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                        <div class="details">
+                                            <h3 class="name">' . $officer[1] . '</h3>
+                                            <h3 class="job">' . $officer[2] . '</h3>
+                                        </div>
                                 </div>';
                         }
                         ?>
@@ -254,16 +258,18 @@ include 'config.php';
                 <!-- Additional Officers -->
                 <div class="main-card row justify-content-center mt-4">
                     <?php
-                    $sql = "SELECT * FROM officers WHERE category='executive-additional' ORDER BY display_order ASC";
-                    $result = $conn->query($sql);
-
-                    while ($row = $result->fetch_assoc()) {
+                    $extra = [
+                        ["christine M..jpg", "CHRISTINE T. MAHINAY", "P.I.O"],
+                        ["joana paula.jpg", "JOANA PAULA BELLO", "BUSINESS MANAGER"],
+                        ["#", "JOHN DAVID T. SESE", "BUSINESS MANAGER"]
+                    ];
+                    foreach ($extra as $officer) {
                         echo '<div class="card col-12 col-lg-3 mb-4">
-                                <img src="uploads/OFFICERS/' . $row['photo'] . '" alt="' . $row['name'] . '">
-                                <div class="details">
-                                    <h3 class="name">' . $row['name'] . '</h3>
-                                    <h3 class="job">' . $row['position'] . '</h3>
-                                </div>
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
                             </div>';
                     }
                     ?>
@@ -274,16 +280,20 @@ include 'config.php';
             <div class="tab-pane fade" id="senate" role="tabpanel">
                 <div class="main-card row justify-content-center mt-4">
                     <?php
-                    $sql = "SELECT * FROM officers WHERE category='senate' ORDER BY display_order ASC";
-                    $result = $conn->query($sql);
-
-                    while ($row = $result->fetch_assoc()) {
+                    $extra = [
+                        ["BAJAR.jpeg", "JESSICA BAJAR", "SENATOR"],
+                        ["khim.jpg", "KIMBERLY ROD M. NATURAL", "SENATOR"],
+                        ["narciso.jpg", "NARCISO B. ANDRIN JR.", "SENATOR"],
+                        ["te angie.jpg", "ANGIELYN P. UBAS", "SENATOR"],
+                        ["lozano.jpg", "ROLLY S. LOZANO JR.", "SENATOR"]
+                    ];
+                    foreach ($extra as $officer) {
                         echo '<div class="card col-12 col-lg-3 mb-4">
-                                <img src="uploads/OFFICERS/' . $row['photo'] . '" alt="' . $row['name'] . '">
-                                <div class="details">
-                                    <h3 class="name">' . $row['name'] . '</h3>
-                                    <h3 class="job">' . $row['position'] . '</h3>
-                                </div>
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
                             </div>';
                     }
                     ?>
@@ -294,16 +304,23 @@ include 'config.php';
             <div class="tab-pane fade" id="representatives" role="tabpanel">
                 <div class="main-card row justify-content-center mt-4">
                     <?php
-                    $sql = "SELECT * FROM officers WHERE category='representatives' ORDER BY display_order ASC";
-                    $result = $conn->query($sql);
-
-                    while ($row = $result->fetch_assoc()) {
+                    $extra = [
+                        ["", "KATE CYRELLE DIOQUINO", "1ST YEAR-BTVTED REPRESENTATIVE"],
+                        ["DANAO.jpg", "JOHN PAUL DANAO", "1ST YEAR-ENTREP REPRESENTATIVE"],
+                        ["joice.jpg", "JOICE B. ARBOLADO", "2ND YEAR-BTVTED REPRESENTATIVE"],
+                        ["kyla.jpg", "KYLA MAE Z. SALIVIO", "2ND YEAR-ENTREP REPRESENTATIVE"],
+                        ["BTVTED-REPRESENTATIVE.jpg", "MARIAL A. CENDAÑA", "3RD YEAR-BTVTED REPRESENTATIVE"],
+                        ["entrep 3.jpg", "ROSEMARIE MAGLENTE", "3RD YEAR-ENTREP REPRESENTATIVE"],
+                        ["raquel.jpg", "RAQUEL DELA PEÑA", "4TH YEAR-BTVTED REPRESENTATIVE"],
+                        ["mariemar.jpg", "MARIEMAR CANTORIA", "4TH YEAR-ENTREP REPRESENTATIVE"]
+                    ];
+                    foreach ($extra as $officer) {
                         echo '<div class="card col-12 col-lg-3 mb-4">
-                                <img src="uploads/OFFICERS/' . $row['photo'] . '" alt="' . $row['name'] . '">
-                                <div class="details">
-                                    <h3 class="name">' . $row['name'] . '</h3>
-                                    <h3 class="job">' . $row['position'] . '</h3>
-                                </div>
+                                    <img src="CSC OFFICERS/' . $officer[0] . '" alt="' . $officer[1] . '">
+                                    <div class="details">
+                                        <h3 class="name">' . $officer[1] . '</h3>
+                                        <h3 class="job">' . $officer[2] . '</h3>
+                                    </div>
                             </div>';
                     }
                     ?>

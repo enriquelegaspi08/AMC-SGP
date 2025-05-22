@@ -9,12 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $year_block = trim($_POST['year_block']);
+    $stud_id = $_POST['stud_id'] ?? '';
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
     $major = $_POST['major'] ?? '';
 
     // Basic validation
-    if (empty($fullname) || empty($username) || empty($email) || empty($year_block) || empty($password) || empty($confirm_password) || empty($major)) {
+    if (empty($fullname) || empty($username) || empty($email) || empty($year_block) || empty($stud_id) || empty($password) || empty($confirm_password) || empty($major)) {
         $errors[] = "All fields are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email format.";
@@ -37,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Insert user if no errors
     if (empty($errors)) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO users (full_name, username, email, year_block, password, major) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $fullname, $username, $email, $year_block, $hashedPassword, $major);
+        $stmt = $conn->prepare("INSERT INTO users (full_name, username, email, year_block, stud_id, password, major) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $fullname, $username, $email, $year_block, $stud_id, $hashedPassword, $major);
 
         if ($stmt->execute()) {
             $success = "Registration successful! You can now <a href='login.php'>login</a>.";
@@ -257,7 +258,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <form action="register.php" method="POST">
-            <div class="user-details">
+            <div class="row col-12 col-md-6 user-details">
+                <div class="input-box">
+                    <span class="details">Student ID</span>
+                    <input type="text" name="stud_id" placeholder="Enter student ID" required />
+                </div>
+            </div>
+            <div class="row user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
                     <input type="text" name="fullname" placeholder="Lastname, First Name, Middle Initial" required />
@@ -274,6 +281,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <span class="details">Year level-Block</span>
                     <input type="text" name="year_block" placeholder="Example: 1-A" required />
                 </div>
+            </div>
+            <div class=" row user-details">
                 <div class="input-box">
                     <span class="details">Password</span>
                     <input type="password" name="password" placeholder="Enter your password" required />

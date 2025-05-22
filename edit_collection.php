@@ -20,6 +20,7 @@ $record = $result->fetch_assoc();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $year_level = $conn->real_escape_string($_POST['year_level']);
     $major = $conn->real_escape_string($_POST['major']);
+    $stud_id = $conn->real_escape_string($_POST['stud_id']);
     $student_name = $conn->real_escape_string($_POST['student_name']);
     $membership_fee = floatval($_POST['membership_fee']);
     $acquaintance_contribution = floatval($_POST['acquaintance_contribution']);
@@ -31,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         year_level = '$year_level',
         major = '$major',
         student_name = '$student_name',
+        stud_id = '$stud_id',
         membership_fee = $membership_fee,
         acquaintance_contribution = $acquaintance_contribution,
         sportsfest_contribution = $sportsfest_contribution,
@@ -84,28 +86,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="mb-3 col-md-6">
+                <label class="form-label">Student ID No.</label>
+                <input type="text" name="stud_id" class="form-control" value="<?php echo htmlspecialchars($record['stud_id']); ?>" required>
+            </div>
+
+            <div class="mb-3 col-md-6">
                 <label class="form-label">Student Name</label>
                 <input type="text" name="student_name" class="form-control" value="<?php echo htmlspecialchars($record['student_name']); ?>" required>
             </div>
 
             <div class="mb-3 col-md-6">
                 <label class="form-label">Membership Fee</label>
-                <input type="number" name="membership_fee" class="form-control" value="<?php echo $record['membership_fee']; ?>" step="0.01" required>
+                <input type="number" name="membership_fee" class="form-control" value="<?php echo $record['membership_fee']; ?>" step="1" required>
             </div>
 
             <div class="mb-3 col-md-6">
                 <label class="form-label">Acquaintance Contribution</label>
-                <input type="number" name="acquaintance_contribution" class="form-control" value="<?php echo $record['acquaintance_contribution']; ?>" step="0.01" required>
+                <input type="number" name="acquaintance_contribution" class="form-control" value="<?php echo $record['acquaintance_contribution']; ?>" step="1" required>
             </div>
 
             <div class="mb-3 col-md-6">
                 <label class="form-label">Sportsfest Contribution</label>
-                <input type="number" name="sportsfest_contribution" class="form-control" value="<?php echo $record['sportsfest_contribution']; ?>" step="0.01" required>
+                <input type="number" name="sportsfest_contribution" class="form-control" value="<?php echo $record['sportsfest_contribution']; ?>" step="1" required>
             </div>
 
             <div class="mb-3 col-md-6">
                 <label class="form-label">Sanction</label>
-                <input type="number" name="sanction" class="form-control" value="<?php echo $record['sanction']; ?>" step="0.01" required>
+                <input type="number" name="sanction" class="form-control" value="<?php echo $record['sanction']; ?>" step="1" required>
             </div>
 
             <div class="mb-3 col-md-6">

@@ -8,16 +8,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $message = trim($_POST['message']);
+    $stud_id = isset($_SESSION['stud_id']) ? intval($_SESSION['stud_id']) : null;
 
-    if (!empty($name) && !empty($email) && !empty($message)) {
-        $stmt = $conn->prepare("INSERT INTO feedbacks (name, email, message) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $name, $email, $message);
+    if (!empty($name) && !empty($email) && !empty($message) && $stud_id !== null) {
+        $stmt = $conn->prepare("INSERT INTO feedbacks (stud_id, name, email, message) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("isss", $stud_id, $name, $email, $message);
 
         if ($stmt->execute()) {
             $feedback_sent = true;
         }
 
         $stmt->close();
+    } else {
+        $error = "Please make sure all fields are filled in and you are logged in.";
     }
 }
 ?>
@@ -137,6 +140,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <?php if ($feedback_sent): ?>
             <div class="alert alert-success">Feedback successfully sent!</div>
+        <?php else:?>
+            <div class="alert alert-success">Feedback not sent! Please log in to allow the student council to respond to your concerns!</div>
         <?php endif; ?>
 
         <div class="row gy-4">

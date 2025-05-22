@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           session_regenerate_id(true);
           
           $_SESSION["user_id"] = $user["id"];
+          $_SESSION["stud_id"] = $user["stud_id"];
           $_SESSION["username"] = $user["username"];
           $_SESSION["full_name"] = $user["full_name"];
           $_SESSION["account_type"] = $user["account_type"];

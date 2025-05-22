@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "amc_csc";
+$dbname = "amc-csc";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

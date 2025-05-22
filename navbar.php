@@ -24,6 +24,11 @@
                         <?php endif; ?>
                     </ul>
                 </li>
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['account_type'] === 'student'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_dashboard.php">Dashboard</a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="organization.php">Organization</a></li>
                 <li class="nav-item dropdown">
@@ -41,6 +46,11 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="feedback.php">Feedback</a></li>
+                <?php if (isset($_SESSION['account_type']) && $_SESSION['account_type'] === 'admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="users.php">Users</a>
+                    </li>
+                <?php endif; ?>
                 <!-- User Info Section -->                
             </ul>
         </div>
